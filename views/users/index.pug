@@ -1,0 +1,15 @@
+html
+    head
+        title= title
+    body
+        h1 USERS LISTS
+        form(action="/users/search", method="GET")
+          input(type="text", name="name")
+          button Search
+        a(href="/users/create") New Item
+        ul
+        each user in users
+            li 
+                span= user.name
+                span &nbsp;
+                a(href="/users/"+user.id) View
